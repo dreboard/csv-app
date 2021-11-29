@@ -2,12 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Helpers\ContactHelper;
 use App\Interfaces\RepositoryInterface;
 use App\Models\Contact;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
+
 
 /**
  *

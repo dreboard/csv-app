@@ -15,11 +15,8 @@ class ArrayRepository implements RepositoryInterface
 
     public function processFile(Request $request)
     {
-
         $file = $request->file('file')->storeAs('app/daily', 'dealer1_' . time());
         CSVImportJob::dispatch($file, 'dealer1');
-        //$array = ContactArrayHelper::csvToArray(Storage::path($file));
-        //$this->processContactsArray($array, 'dealer1');
     }
 
     /**

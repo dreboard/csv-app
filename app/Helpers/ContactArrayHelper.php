@@ -8,13 +8,15 @@ namespace App\Helpers;
 class ContactArrayHelper
 {
 
+    private array $start_array;
+
 
     /**
      * @param array $start_array
      */
     public function __construct(array $start_array)
     {
-
+        $this->start_array = $start_array;
     }
 
 
