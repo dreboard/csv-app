@@ -1,6 +1,7 @@
 ## CSV App
 
 App takes a CSV file and imports it into a MySQL database (contacts table), filtering duplicates and validationg data.  After the file is processed, invalid entries are inserted into a bad contacts table.  
+
 The bad contacts table uses a batch key, so even if the file is updated and has the same file name, sorting and selecting can be filtered by batch number.
 
 The files are saved and reported to a job, which processes the file by batch.
