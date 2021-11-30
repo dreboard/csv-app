@@ -19,5 +19,6 @@ Route::post('/store', [FileController::class, 'store']);
 
 Route::group(['prefix' => 'V1'], function () {
     Route::post('/date_range', [SearchContactsController::class, 'dateRange']);
+    Route::put('/contacts', [ContactsController::class, 'update']);
     Route::apiResource('/contacts', ContactsController::class);
 });

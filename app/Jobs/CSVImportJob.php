@@ -15,11 +15,20 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * CSVImportJob handles the transfer of csv converted array into the database
+ */
 class CSVImportJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    /**
+     * @var string
+     */
     private string $filePath;
+    /**
+     * @var string
+     */
     private string $source;
 
     /**
@@ -34,7 +43,7 @@ class CSVImportJob implements ShouldQueue
     }
 
     /**
-     * Execute the job.
+     * Execute the processing large contacts array job.
      *
      * @return void
      */

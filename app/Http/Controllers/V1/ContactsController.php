@@ -16,6 +16,7 @@ use App\Http\Resources\ContactsResource;
 use App\Models\Contact;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
@@ -74,12 +75,14 @@ class ContactsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param ContactsPostRequest $request
+     * @param Request $request
      * @param Contact $contact
      * @return ContactsResource|JsonResponse
      */
-    public function update(ContactsPostRequest $request, Contact $contact): ContactsResource|JsonResponse
+    public function update(Request $request): ContactsResource|JsonResponse
     {
+        $contact = Contact::find($request->input('id'));
+
         try{
             $contact->update([
                 'first_name' => $request->input('first_name'),

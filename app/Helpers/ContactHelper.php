@@ -36,9 +36,9 @@ class ContactHelper
     /**
      * @param array $contactArray
      * @param int $batch
-     * @param $source
+     * @param string $source
      */
-    public function __construct(array $contactArray, int $batch, $source)
+    public function __construct(array $contactArray, int $batch, string $source)
     {
         $this->contactArray = $contactArray;
         $this->batch = $batch;
@@ -47,6 +47,8 @@ class ContactHelper
 
 
     /**
+     * Filter valid and invalid contacts from converted csv file
+     *
      * @return bool
      */
     public function filterContact(): bool
@@ -77,6 +79,7 @@ class ContactHelper
 
 
     /**
+     * Create a contact
      *
      */
     public function enterContact()
@@ -91,6 +94,8 @@ class ContactHelper
 
 
     /**
+     * Validate an email address
+     *
      * @param string $value
      * @return bool
      */
@@ -101,6 +106,8 @@ class ContactHelper
 
 
     /**
+     * Validate a phone number
+     *
      * @param string $value
      * @return bool
      */
